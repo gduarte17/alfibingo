@@ -3,7 +3,7 @@ import { createServer } from './web';
 import { startScheduler } from './scheduler';
 import { WEBHOOK_BASE_URL } from './config';
 
-const PORT = process.env.PORT ? Number(process.env.PORT) : 3000;
+const PORT = Number(process.env.PORT || 3000);
 
 async function main() {
   if (!WEBHOOK_BASE_URL) {
@@ -13,6 +13,7 @@ async function main() {
   }
   const app = createServer();
   app.listen(PORT, () => console.log(`Servidor na porta ${PORT}`));
+  await bot.launch();
 
   startScheduler();
 

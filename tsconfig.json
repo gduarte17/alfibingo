@@ -43,10 +43,10 @@
 
 
     "esModuleInterop": true,
-    "rootDir": "./src",
-    "outDir": "./dist",
+    "rootDir": "src",
+    "outDir": "dist",
     "resolveJsonModule": true,
     "lib": ["dom", "esnext"],
   },
-  "include": ["src/**/*"]
+  "include": ["src"]
 }
